@@ -32,7 +32,6 @@ module full_adder_tb ();
         a = 1; b = 0; cin = 1; #5;
         a = 1; b = 1; cin = 0; #5;
         a = 1; b = 1; cin = 1; #5;
-        $finish;
     end
 
 endmodule
