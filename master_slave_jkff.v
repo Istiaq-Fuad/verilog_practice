@@ -1,3 +1,8 @@
+/* During wave simulation in ModelSim,
+Set the variable Clk as clock.
+Force the value of Clr to 0 only for the first run. 
+After the first run, force the value to 1. 
+*/
 module master_slave_jkff (
   j, k, clk, clr, q, qbar
 );

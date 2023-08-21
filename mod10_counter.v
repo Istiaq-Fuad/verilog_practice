@@ -1,3 +1,8 @@
+/* During wave simulation in ModelSim,
+Set the variable Clk as clock.
+Force the value of Clr variable to 0 only for the first run. 
+After the first run, set it to NoForce. 
+*/
 `include "master_slave_jkff.v"
 
 module mod10_counter (
