@@ -4,45 +4,19 @@ module master_slave_jkff (
 
   input j, k, clk, clr;
   output q, qbar;
-  wire n0, n1, n2, n3, q0, q1, clkbar;
 
-  nand (n0, j, clk, clr, qbar);
-  nand (n1, K, clk, q);
-  nand (q0, q1, n0);
-  nand (q1, q0, n1, clr);
+  wire w1, w2, w3, w4, w5, w6, clkbar;
+
+  nand (w1, j, clk, qbar, clr);
+  nand (w2, k, clk, q);
+  nand (w3, w1, w4);
+  nand (w4, w2, w3, clr);
 
   not (clkbar, clk);
 
-  nand (n2, q0, clkbar);
-  nand (n3, q1, clkbar);
-  nand (q, n2, qbar);
-  nand (qbar, n3, q, clr);
+  nand (w5, w3, clkbar);
+  nand (w6, w4, clkbar);
+  nand (q, w5, qbar);
+  nand (qbar, w6, q);
 
 endmodule
-
-
-// module master_slave_jkff_tb ();
-
-//     reg clk, clr, j, k;
-//     wire q, qbar;
-
-//     master_slave_jkff msjkff (j, k, clk, clr, q, qbar);
-
-//     initial begin
-//         clk = 0;
-//         forever #2 clk = ~clk;
-//     end
-
-//     initial begin
-//         $dumpfile("master_slave_jkff.vcd");
-//         $dumpvars(0, master_slave_jkff_tb);
-//         j = 0; k = 1; clr = 0; #3;
-//         j = 0; k = 0; clr = 1; #2;
-//         j = 1; k = 0; #5;
-//         j = 0; k = 0; #5;
-//         // j = 1; k = 1; #5;
-//         j = 0; k = 1; #2;
-//         $finish;
-//     end
-
-// endmodule

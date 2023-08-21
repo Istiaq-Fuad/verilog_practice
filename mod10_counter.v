@@ -18,25 +18,3 @@ module mod10_counter (
     master_slave_jkff msjkff3 (j, k, q[2], clr, q[3], qbar[3]);
 
 endmodule
-
-
-// module mod10_counter_tb ();
-
-//     reg clk;
-//     wire [3:0] q;
-
-//     mod10_counter cntr (.q(q), .clk(clk));
-
-//     initial begin
-//         clk = 0;
-//         forever #2 clk = ~clk;
-//     end
-
-//     initial begin
-//         $dumpfile("mod10_counter.vcd");
-//         $dumpvars(0, mod10_counter_tb);
-//         #30;
-//         $finish;
-//     end
-
-// endmodule
