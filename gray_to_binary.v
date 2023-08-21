@@ -1,6 +1,6 @@
 module gray_to_binary (
-    out,
-    in
+  out,
+  in
 );
 
   output [3:0] out;
@@ -20,8 +20,8 @@ module gray_to_binary_tb ();
   wire [3:0] binary;
 
   gray_to_binary g2b (
-      .out(binary),
-      .in (gray)
+    .out(binary),
+    .in (gray)
   );
 
   initial begin
