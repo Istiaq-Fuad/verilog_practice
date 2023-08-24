@@ -13,6 +13,8 @@ module four_bit_sequence (q, clk, clr);
     wire [3:0] qbar;
     wire w1, w2, w3, w4, w5;  
 
+    // this circuit was designed using T-flipflop
+    // but implemented with jk where both j and k input are same
     xor (w1, q[1], q[0]);
     master_slave_jkff msjkff0 (w1, w1, clk, clr, q[0], qbar[0]);
     xor (w2, q[2], q[1]);
