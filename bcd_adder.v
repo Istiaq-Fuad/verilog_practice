@@ -1,4 +1,4 @@
-`include "four_bit_full_adder.v"
+`include "four_bit_full_adder.v" // no need to include in modelsim
 
 module bcd_adder (s, cout, a, b, cin);
 

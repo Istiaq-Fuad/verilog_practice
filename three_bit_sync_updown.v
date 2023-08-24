@@ -3,7 +3,7 @@ Set the variable Clk as clock.
 Force the value of Clr to 0 only for the first run. 
 After the first run, force the value to 1. 
 */
-`include "master_slave_jkff.v"
+`include "master_slave_jkff.v"  // no need to include in modelsim
 
 module three_bit_sync_updown (q, clk, m, clr);
 

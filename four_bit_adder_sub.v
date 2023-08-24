@@ -1,5 +1,5 @@
-`include "full_adder.v"
-`include "four_bit_full_adder.v"
+`include "full_adder.v"		// no need to include in modelsim
+`include "four_bit_full_adder.v"	// no need to include in modelsim
 
 module four_bit_adder_sub(
     a, b, ctrl, sout, cout

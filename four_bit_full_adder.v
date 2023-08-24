@@ -1,4 +1,4 @@
-`include "full_adder_scratch.v"
+`include "full_adder_scratch.v" // no need to include in modelsim
 
 module four_bit_full_adder(
     a, b, cin, sum, cout

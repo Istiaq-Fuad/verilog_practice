@@ -1,5 +1,5 @@
 // full adder implementation using half adder
-`include "half_adder.v"
+`include "half_adder.v" // no need to include in modelsim
 
 module full_adder(
     a, b, cin, sum, cout

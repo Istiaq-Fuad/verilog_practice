@@ -4,7 +4,7 @@ Set the variable Clk as clock.
 Force the value of Clr variable to 0 only for the first run. 
 After the first run, Force the value to 1. 
 */
-`include "master_slave_jkff.v"
+`include "master_slave_jkff.v"  // no need to include in modelsim
 
 module four_bit_sequence_jkff (q, clk, clr);
 

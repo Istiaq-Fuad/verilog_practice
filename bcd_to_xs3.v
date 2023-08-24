@@ -1,4 +1,4 @@
-module bcd_to_xs3 (bcd, xs3);
+module bcd_to_xs3 (bcd, xs3);   // no need to include in modelsim
 
     input [3:0] bcd;
     output [3:0] xs3;
