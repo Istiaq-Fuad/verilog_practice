@@ -1,4 +1,5 @@
 `include "full_adder.v"
+`include "four_bit_full_adder.v"
 
 module four_bit_adder_sub(
     a, b, ctrl, sout, cout
@@ -8,16 +9,25 @@ module four_bit_adder_sub(
     input ctrl;
     output [3:0] sout;
     output cout;
-    wire b0, b1, b2, b3, c0, c1, c2;
+    // wire b0, b1, b2, b3, c0, c1, c2;
+	wire [3:0] w;
 
-    xor (b0, b[0], ctrl);
-    full_adder fa0 (a[0], b0, ctrl, sout[0], c0);
-    xor (b1, b[1], ctrl);
-    full_adder fa1 (a[1], b1, c0, sout[1], c1);
-    xor (b2, b[2], ctrl);
-    full_adder fa2 (a[2], b2, c1, sout[2], c2);
-    xor (b3, b[3], ctrl);
-    full_adder fa3 (a[3], b3, c2, sout[3], cout);
+	// implementation using full adder
+    // xor (b0, b[0], ctrl);
+    // full_adder fa0 (a[0], b0, ctrl, sout[0], c0);
+    // xor (b1, b[1], ctrl);
+    // full_adder fa1 (a[1], b1, c0, sout[1], c1);
+    // xor (b2, b[2], ctrl);
+    // full_adder fa2 (a[2], b2, c1, sout[2], c2);
+    // xor (b3, b[3], ctrl);
+    // full_adder fa3 (a[3], b3, c2, sout[3], cout);
+
+	// implementation using four bit full adder
+    xor (w[0], b[0], ctrl);
+    xor (w[1], b[1], ctrl);
+    xor (w[2], b[2], ctrl);
+    xor (w[3], b[3], ctrl);
+	four_bit_full_adder fa (a, w, ctrl, sout, cout);
 
 endmodule
 
