@@ -1,3 +1,4 @@
+// full adder implementation using half adder
 `include "half_adder.v"
 
 module full_adder(
